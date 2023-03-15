@@ -37,7 +37,7 @@ jobs:
   get_commit_message:
     name: Get commit message
     runs-on: ubuntu-latest
-    if: github.repository == 'scipy/scipy'
+    if: github.repository == 'RainLinux/scipy'
     outputs:
       message: ${{ steps.commit_message.outputs.message }}
     steps:
@@ -85,8 +85,8 @@ jobs:
         # recent gfortran (gfortran-9 is present on the macOS-11.0 image), and
         # will probably require that the prebuilt openBLAS is updated.
         # xref https://github.com/andyfaff/scipy/pull/28#issuecomment-1203496836
-        - [macos-10.15, macosx, x86_64]
-        - [windows-2019, win, AMD64]
+        #- [macos-10.15, macosx, x86_64]
+        #- [windows-2019, win, AMD64]
 
         python: [["cp38", "3.8"], ["cp39", "3.9"], ["cp310", "3.10"], ["cp311", "3.11.0-alpha - 3.11.0"]]
         # python[0] is used to specify the python versions made by cibuildwheel
@@ -179,4 +179,4 @@ jobs:
           # https://anaconda.org/multibuild-wheels-staging/scipy
           #
           # The tokens were originally generated at anaconda.org
-          upload_wheels
+          #upload_wheels
